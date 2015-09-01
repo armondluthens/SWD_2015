@@ -30,23 +30,17 @@ public class Scoreboard {
         }
         Scanner input = new Scanner(System.in);
         
-        public void setHomeTeam(String homeTeam){
-           this.homeTeam = homeTeam;
-        }
-        public String getHomeTeam(){
-            return homeTeam;
-        }
         public void setTeams(String homeTeam, String awayTeam){
             this.homeTeam = homeTeam;
             this.awayTeam = awayTeam;
         }
-        
-        public void setAwayTeam(String awayTeam){
-            this.awayTeam = awayTeam;
+        public String getHomeTeam(){
+            return homeTeam;
         }
         public String getAwayTeam(){
             return awayTeam;
         }
+        
         public void addScore(int selectedSport, int gameChoice){
             if(selectedSport == 1){
                 if(gameChoice == 1){
@@ -133,14 +127,31 @@ public class Scoreboard {
         public String getScoringMethod(){
             return scoringMethod;
         }
+        
         public void startGame(){
             
         }
+        
         public void endCurrentPeriodOfPlay(){
           currentPeriodOfPlay++;
         }
         public int getCurrentPeriodOfPlay(){
             return currentPeriodOfPlay;
+        }
+        
+        public void setLengthOfPeriod(int sport){
+            if(sport == 1){
+                periodLength = "15:00";
+            }
+            else if(sport == 2){
+                periodLength = "12:00";
+            }
+            else if(sport == 3){
+                periodLength = "45:00";
+            }  
+            else{
+                periodLength = "20:00";
+            }  
         }
         public String getLengthOfPeriod(){
             return periodLength;
@@ -159,6 +170,4 @@ public class Scoreboard {
         public String getNameOfPeriod(){
             return periodName;
         }
-            
-
 }
