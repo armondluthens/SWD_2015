@@ -36,7 +36,19 @@ public class ScoreboardApp {
                 selectedSport = input.nextInt();
             }
             if (selectedSport != 5) {
-                Scoreboard sportsObject = new Scoreboard();
+                //Scoreboard sportsObject = new Scoreboard();
+                if(selectedSport == 1){
+                    Football sportsObject = new Football();
+                }
+                else if(selectedSport == 2){
+                    Basketball sportsObject = new Basketball();
+                }
+                else if(selectedSport == 3){
+                    Soccer sportsObject = new Soccer();
+                }
+                else{
+                    Hockey sportsObject = new Hockey();
+                }
                 sportsObject.setScoringMethod(selectedSport);
                 sportsObject.setNameOfPeriod(selectedSport);
 
@@ -87,6 +99,15 @@ public class ScoreboardApp {
                         || (selectedSport == 2 && sportsObject.getCurrentPeriodOfPlay() > 4)
                         || (selectedSport == 3 && sportsObject.getCurrentPeriodOfPlay() > 2)
                         || (selectedSport == 4 && sportsObject.getCurrentPeriodOfPlay() > 3)){
+                            if(sportsObject.getHomeScore() > sportsObject.getAwayScore()){
+                                System.out.println("Winner: " + sportsObject.getHomeTeam()) ;
+                            }
+                            else if(sportsObject.getHomeScore() < sportsObject.getAwayScore()){
+                                System.out.println("Winner: " + sportsObject.getAwayTeam());
+                            }
+                            else{
+                                System.out.println("Game ended in tie.");
+                            }
                             System.out.println("FINAL SCORE\n");
                     }
                     else{
@@ -135,6 +156,5 @@ public class ScoreboardApp {
             System.out.println("2. " + awayTeam + " goal");
             System.out.println("3. End Period");
         }
-
     }
 } // end public class ScoreboardApp

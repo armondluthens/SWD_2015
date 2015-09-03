@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class Scoreboard {
         private String homeTeam;
         private String awayTeam;
-        private int curHomeScore;
-        private int curAwayScore;
+        public int curHomeScore; //change to private after subclass is built
+        public int curAwayScore; //change to private after subclass is built
         private String scoringMethod;
         private int currentPeriodOfPlay;
         private String periodLength;
@@ -28,7 +28,7 @@ public class Scoreboard {
             curAwayScore = 0;
             currentPeriodOfPlay = 1;
         }
-        Scanner input = new Scanner(System.in);
+        //Scanner input = new Scanner(System.in);
         
         public void setTeams(String homeTeam, String awayTeam){
             this.homeTeam = homeTeam;
@@ -40,7 +40,7 @@ public class Scoreboard {
         public String getAwayTeam(){
             return awayTeam;
         }
-        
+        /*
         public void addScore(int selectedSport, int gameChoice){
             if(selectedSport == 1){
                 if(gameChoice == 1){
@@ -103,13 +103,14 @@ public class Scoreboard {
                 }
             }
         }
+        */
         public int getHomeScore(){
             return curHomeScore;
         }
         public int getAwayScore(){
             return curAwayScore;
         }
-        
+        /*
         public void setScoringMethod(int sport){
             if(sport == 1){
                 this.scoringMethod = "Football";
@@ -127,7 +128,7 @@ public class Scoreboard {
         public String getScoringMethod(){
             return scoringMethod;
         }
-        
+        */
         public void startGame(){
             
         }
@@ -138,7 +139,7 @@ public class Scoreboard {
         public int getCurrentPeriodOfPlay(){
             return currentPeriodOfPlay;
         }
-        
+        /*
         public void setLengthOfPeriod(int sport){
             if(sport == 1){
                 periodLength = "15:00";
@@ -156,6 +157,8 @@ public class Scoreboard {
         public String getLengthOfPeriod(){
             return periodLength;
         }
+        */
+        /*
         public void setNameOfPeriod(int sport){
             if(sport == 1 || sport ==2){
                 this.periodName = "Quarter";
@@ -169,5 +172,5 @@ public class Scoreboard {
         }
         public String getNameOfPeriod(){
             return periodName;
-        }
+        }*/
 }
